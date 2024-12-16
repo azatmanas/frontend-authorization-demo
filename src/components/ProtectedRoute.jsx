@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
+import AppContext from "../context/AppContext";
 
-function ProtectedRoute({ isLoggedIn, children, anonymous = false }) {
+function ProtectedRoute({ children, anonymous = false }) {
   const location = useLocation();
+  const { isLoggedIn } = useContext(AppContext);
   const from = location.state?.from || "/";
   if (anonymous && isLoggedIn) {
     // If user isn't logged in, return a Navigate component that sends the user to /login
