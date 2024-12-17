@@ -1,5 +1,6 @@
 import NavBar from "./NavBar";
 import "./styles/MyProfile.css";
+import AppContext from "../context/AppContext";
 
 function MyProfile({
   userData = { username: "Username here", email: "Email here" },
